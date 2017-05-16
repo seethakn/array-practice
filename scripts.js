@@ -8,9 +8,35 @@
   3. console log something conversational to user, like "Oh, you want to know [question]? Well, I think... [answer]"
 */
 
-var spices = ["clove", "nutmeg", "ancho"];
+//This is an anonymous function
+/*window.onload = function() {
+  console.log("zomg ready!");
+}
 
-function toggleSpice(name) {
+//or
+*/
+
+ //Have a named function
+function windowReady() {
+  //console.log("zomg ready!");
+  //console.log("All of your questions answered, just maybe not in the order you ask them.");
+  console.log(document.getElementsByTagName("small"));
+  console.log(document.getElementById("fortune-container"));
+}
+window.onload = windowReady;
+
+/*var newArray = [];
+console.log("Length of array " + newArray.length); */
+
+var spices = ["clove", "nutmeg", "ancho"];
+//This is a named function
+function countEmUp(arr){
+   var allSpices = spices.join("");
+   return allSpices.length;
+}
+//console.log(countEmUp(spices));
+
+/*function toggleSpice(name) {
   var spiceIndex = spices.indexOf(name);
   //add name to spices if it is not there
  if (spiceIndex == -1){
@@ -29,7 +55,7 @@ toggleSpice("vanilla");
 toggleSpice("ancho");
 console.log("Spices are " + spices);
 
-
+*/
 
 //var numbers = [1, 2, 3, 4, 5];
 
@@ -93,6 +119,9 @@ function answerQuestion () {
   var rando = Math.floor(Math.random() * answers.length);
   var answer = answers[rando];
 
+  var container = document.getElementById("fortune-container");
+  container.innerHTML = "<p>" + answer + "</p>";
+  
   console.log(["Oh, you asked...", question, "? ", "Well I think...", answer].join(" "))
 }
 
