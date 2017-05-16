@@ -28,6 +28,7 @@
     section.container {
       display: flex;
       flex-direction: row;
+      flex-wrap: wrap;
       justify-content: space-around;
       margin-top: 15vh;
     }
@@ -40,11 +41,20 @@
 </header>
 
 <section class="container">
-  <img src="http://appinventor.mit.edu/explore/sites/all/files/Teach/media/image_8_ball.jpg" alt="a magic 8 ball">
+  <img onclick="handleClick()" src="http://appinventor.mit.edu/explore/sites/all/files/Teach/media/image_8_ball.jpg" alt="a magic 8 ball">
 
   <div>
-    <form>
-      <!-- TODO: Add a text field and submit button, attach a form handler function -->
+    <form name="magic8" onsubmit="answerQuestion()">
+      <label for="question">What do you want to know?</label>
+      <input type="text" name="question" id="question">
+      <input type="submit" name="submitQuestion" value="ASK">
+    </form>
+  </div>
+  <div>
+    <form name="addForm" onsubmit="addAnswer()">
+      <label for="addInput">What answer would you like to add?</label>
+      <input type="text" name="answerToAdd" id="addInput" value="">
+      <input type="submit" name="submitAddAnswer" value="ADD">
     </form>
   </div>
 </section>
